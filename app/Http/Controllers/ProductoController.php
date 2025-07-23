@@ -10,7 +10,7 @@ class ProductoController extends Controller
     // Mostrar formulario de registro
     public function create()
     {
-        return view('productos.crear');
+        return view('productos.create');
     }
 
     // Validar datos, registrar producto y devolver mensaje de exito
@@ -55,7 +55,7 @@ class ProductoController extends Controller
     public function show($id)
     {
         $producto = Producto::findOrFail($id);
-        return view('productos.mostrar', compact('producto'));
+        return view('productos.show', compact('producto'));
     }
 
 
@@ -72,7 +72,7 @@ class ProductoController extends Controller
     public function edit($id)
     {
         $producto = Producto::findOrFail($id);
-        return view('productos.editar', compact('producto'));
+        return view('productos.edit', compact('producto'));
     }
 
     // Validar datos, actualizar producto y devolver mensaje de exito

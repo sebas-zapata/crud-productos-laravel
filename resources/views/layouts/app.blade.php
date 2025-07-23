@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>@yield('titulo') - SISADMEDU</title>
+    <title>@yield('titulo')</title>
 
     @if (session('alerta'))
     <meta name="mensaje-sistema" content="{{ session('alerta') }}">
@@ -25,7 +25,7 @@
 <body>
 
     <!-- Encabezado principal -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container">
             <a class="navbar-brand" href="#">@yield('encabezado')</a>
         </div>
