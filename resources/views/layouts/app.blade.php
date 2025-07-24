@@ -29,6 +29,10 @@
         <div class="container">
             <a class="navbar-brand" href="#">@yield('encabezado')</a>
         </div>
+        @auth
+        {{ Auth::user()->nombre }}
+    @endauth
+
     </nav>
 
     <!-- Contenido principal -->
