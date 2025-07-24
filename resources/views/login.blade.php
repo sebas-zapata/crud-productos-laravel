@@ -7,7 +7,7 @@
 <div class="container my-5">
     <div class="card shadow-lg mx-auto border-0 rounded-4" style="max-width: 500px;">
         
-        <div class="card-header bg-dark text-white text-center rounded-top-4">
+        <div class="card-header bg-dark text-white text-center rounded-top-4 p-5">
             <h4 class="mb-0 py-2">Bienvenido</h4>
             <p class="mb-1 small">Por favor, ingresa tus credenciales</p>
         </div>

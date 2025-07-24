@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
-        if(Auth::check()) {
+        if (Auth::check()) {
             return redirect()->route('dashboard');
         }
         return view('login');
@@ -21,11 +21,12 @@ class LoginController extends Controller
     {
         $request->validate([
             'correo_electronico' => 'required|email',
-            'contraseña' => 'required',
+            'contraseña' => 'required|string|min:8',
         ], [
             'correo_electronico.required' => 'El correo electronico es obligatorio.',
             'correo_electronico.email' => 'El correo no es válido.',
             'contraseña.required' => 'La contraseña es obligatoria.',
+            'contraseña.min' => 'La contraseña debe tener al menos 8 caracteres.',
         ]);
 
 

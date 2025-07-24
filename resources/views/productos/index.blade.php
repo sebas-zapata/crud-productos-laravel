@@ -79,8 +79,8 @@
 
     </div>
     @else
-    <div class="alert alert-warning text-center">
-        No hay productos registrados.
+    <div class="alert alert-dark text-center">
+        <strong>No hay productos registrados.</strong>
     </div>
     @endif
 </div>
