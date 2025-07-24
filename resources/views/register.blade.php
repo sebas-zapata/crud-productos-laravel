@@ -17,19 +17,19 @@
         @csrf
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ old('nombre') }}" required>
         </div>
         <div class="mb-3">
             <label for="correo_electronico" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="correo_electronico" name="correo_electronico" required>
+            <input type="email" class="form-control" id="correo_electronico" name="correo_electronico" value="{{ old('correo_electronico') }}" required>
         </div>
         <div class="mb-3">
             <label for="contraseña" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="contraseña" name="contraseña" required>
+            <input type="password" class="form-control" id="contraseña" name="contraseña" value="{{ old('contraseña') }}" required>
         </div>
         <div class="mb-3">
             <label for="contraseña_confirmation" class="form-label">Confirmar Contraseña</label>
-            <input type="password" class="form-control" id="contraseña_confirmation" name="contraseña_confirmation" required>
+            <input type="password" class="form-control" id="contraseña_confirmation" name="contraseña_confirmation" value="{{ old('contraseña_confirmation') }}" required>
         </div>
         <div>
             <p>Ya tienes una cuenta? <a href="{{ url('/login') }}">Iniciar sesión</a></p>

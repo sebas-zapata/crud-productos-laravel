@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
     public function showRegistrationForm()
     {
+        if (Auth::check()) {
+            return redirect()->route('dashboard');
+        }
         return view('register');
     }
 
@@ -26,7 +30,7 @@ class RegisterController extends Controller
         Usuario::create([
             'nombre' => $request->nombre,
             'correo_electronico' => $request->correo_electronico,
-            'contraseña' => Hash::make($request->password),
+            'contraseña' => Hash::make($request->contraseña),
         ]);
 
         // Redirigir al login o dashboard

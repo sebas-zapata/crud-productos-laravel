@@ -8,13 +8,13 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
     return view('login');
-})->name('inicio');
+});
 
 // Product routes
 Route::resource('productos', ProductoController::class)->middleware('auth');
 
 // Registration routes
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('registrar');
 Route::post('/register', [RegisterController::class, 'register']);
 
 // Authentication routes

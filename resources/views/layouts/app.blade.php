@@ -25,15 +25,22 @@
 <body>
 
     <!-- Encabezado principal -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">@yield('encabezado')</a>
-        </div>
-        @auth
-        {{ Auth::user()->nombre }}
-    @endauth
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="#">{{ config('app.name', 'Mi App') }} - @yield('encabezado')</a>
 
-    </nav>
+        @auth
+        <div class="d-flex align-items-center gap-3">
+            <span class="text-white mb-0">Bienvenido, {{ Auth::user()->nombre }}</span>
+            <form action="{{ url('/logout') }}" method="POST" class="d-inline">
+                @csrf
+                <button type="submit" class="btn btn-sm btn-outline-light">Cerrar Sesión</button>
+            </form>
+        </div>
+        @endauth
+    </div>
+</nav>
+
 
     <!-- Contenido principal -->
     <div class="container-fluid">
