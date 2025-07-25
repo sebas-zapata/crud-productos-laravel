@@ -3,6 +3,13 @@
 @section('contenido')
     <h2>Lista de Servicios</h2>
 
+    @if (session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+        
+    @endif
+
+    <a href="{{ route('servicios.create') }}" class="btn btn-primary mt-3">Registrar Nuevo Servicio</a>
+
     <table class="table mt-3">
         <thead>
             <tr>
