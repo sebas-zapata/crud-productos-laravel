@@ -41,7 +41,7 @@ class ServicioController extends Controller
             'precio' => $request->precio,
         ]);
 
-        return redirect()->route('servicios.index')->with('success', 'Servicio creado exitosamente.');
+        return redirect()->route('servicios.index')->with('alerta', "Servicio '{$request->nombre}' fue guardado con éxito");
     }
 
     /**
@@ -72,7 +72,10 @@ class ServicioController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(Servicio $servicio)
+
     {
-        //
+        // Eliminar el servicio y redirigir con mensaje de éxito
+        $servicio->delete();
+        return redirect()->route('servicios.index')->with('success', 'Servicio eliminado exitosamente.');
     }
 }

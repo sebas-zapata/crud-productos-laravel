@@ -24,20 +24,41 @@
 
 <body>
 
-    <!-- Encabezado principal -->
+<!-- Encabezado principal -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-    <div class="container d-flex justify-content-between align-items-center">
+    <div class="container-fluid">
+        <!-- Marca / título -->
         <a class="navbar-brand" href="#">{{ config('app.name', 'Mi App') }} - @yield('encabezado')</a>
 
-        @auth
-        <div class="d-flex align-items-center gap-3">
-            <span class="text-white mb-0">Bienvenido, {{ Auth::user()->nombre }}</span>
-            <form action="{{ url('/logout') }}" method="POST" class="d-inline">
-                @csrf
-                <button type="submit" class="btn btn-sm btn-outline-light">Cerrar Sesión</button>
-            </form>
+        <!-- Botón hamburguesa para pantallas pequeñas -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Alternar navegación">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenido colapsable -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContenido">
+            @auth
+            <ul class="navbar-nav align-items-center gap-2">
+                
+                <!-- Texto de bienvenida -->
+                <li class="nav-item text-white">
+                    Bienvenido, {{ Auth::user()->nombre }}
+                </li>
+                <!-- Botón Dashboard -->
+                <li class="nav-item">
+                    <a href="{{ url('/dashboard') }}" class="btn btn-outline-light btn-sm">Ir al Dashboard</a>
+                </li>
+
+                <!-- Botón cerrar sesión -->
+                <li class="nav-item">
+                    <form action="{{ url('/logout') }}" method="POST" class="d-inline">
+                        @csrf
+                        <button type="submit" class="btn btn-outline-light btn-sm">Cerrar Sesión</button>
+                    </form>
+                </li>
+            </ul>
+            @endauth
         </div>
-        @endauth
     </div>
 </nav>
 

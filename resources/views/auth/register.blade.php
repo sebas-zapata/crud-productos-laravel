@@ -29,6 +29,20 @@
                 @enderror
             </div>
 
+            {{-- Apellido --}}
+            <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" 
+                       class="form-control @error('apellido') is-invalid @enderror" 
+                       id="apellido" 
+                       name="apellido" 
+                       value="{{ old('apellido') }}" 
+                       placeholder="Tu apellido completo">
+                @error('apellido')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
             {{-- Correo electrónico --}}
             <div class="mb-3">
                 <label for="correo_electronico" class="form-label">Correo Electrónico</label>

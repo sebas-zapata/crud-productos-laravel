@@ -16,5 +16,8 @@
     <a href="{{ route('productos.index') }}" class="btn btn-dark mt-4">
         <i class="bi bi-box-seam"></i> Ver productos
     </a>
+    <a href="{{ route('servicios.index') }}" class="btn btn-dark mt-4">
+        <i class="bi bi-briefcase"></i> Ver servicios
+    </a>
 </div>
 @endsection

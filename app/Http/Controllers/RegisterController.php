@@ -14,7 +14,7 @@ class RegisterController extends Controller
         if (Auth::check()) {
             return redirect()->route('dashboard');
         }
-        return view('register');
+        return view('auth.register');
     }
 
     public function register(Request $request)
@@ -22,10 +22,12 @@ class RegisterController extends Controller
         // Validar los datos del formulario
         $request->validate([
             'nombre' => 'required|string|max:255',
+            'apellido' => 'required|string|max:255',
             'correo_electronico' => 'required|email|unique:usuarios,correo_electronico',
             'contraseña' => 'required|string|min:8|confirmed',
         ], [
             'nombre.required' => 'El nombre es obligatorio.',
+            'apellido.required' => 'El apellido es obligatorio.',
             'correo_electronico.required' => 'El correo electronico es obligatorio.',
             'correo_electronico.email' => 'El correo no es válido.',
             'correo_electronico.unique' => 'El correo ya está en uso.',
@@ -37,6 +39,7 @@ class RegisterController extends Controller
         // Crear el usuario en la base de datos
         $usuarioLogueado = Usuario::create([
             'nombre' => $request->nombre,
+            'apellido' => $request->apellido,
             'correo_electronico' => $request->correo_electronico,
             'contraseña' => Hash::make($request->contraseña),
         ]);
