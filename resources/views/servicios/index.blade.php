@@ -27,8 +27,9 @@
                         <form action="{{ route('servicios.destroy', $servicio->id) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger btn-sm" onclick="return confirm('¿Eliminar?')">Eliminar</button>
+                            <button class="btn btn-danger btn-sm btn-eliminar" data-nombre="{{ $servicio->nombre }}" type="button">Eliminar</button>
                         </form>
+                        <a class="btn btn-info btn-sm" href="{{ route('servicios.show', $servicio->id) }}">Ver</a>
                     </td>
                 </tr>
             @endforeach

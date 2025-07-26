@@ -49,7 +49,7 @@ class ServicioController extends Controller
      */
     public function show(Servicio $servicio)
     {
-        //
+        return view('servicios.show', compact('servicio'));
     }
 
     /**
@@ -76,6 +76,6 @@ class ServicioController extends Controller
     {
         // Eliminar el servicio y redirigir con mensaje de éxito
         $servicio->delete();
-        return redirect()->route('servicios.index')->with('success', 'Servicio eliminado exitosamente.');
+        return redirect()->route('servicios.index')->with('alerta', 'Servicio eliminado exitosamente.');
     }
 }

@@ -12,16 +12,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Confirmación para eliminar
-    const eliminarBtns = document.querySelectorAll('.btn-eliminar');
-    eliminarBtns.forEach(btn => {
+    // Confirmación para eliminar registros
+    const eliminarRegistrosBtns = document.querySelectorAll('.btn-eliminar');
+    eliminarRegistrosBtns.forEach(btn => {
         btn.addEventListener('click', function () {
             const form = this.closest('form');
-            const nombreProducto = this.getAttribute('data-nombre');
+            const nombreRegistro = this.getAttribute('data-nombre');
 
             Swal.fire({
                 title: '¿Estás seguro?',
-                text: `Estás a punto de eliminar "${nombreProducto}". Esta acción no se puede deshacer.`,
+                text: `Estás a punto de eliminar "${nombreRegistro}". Esta acción no se puede deshacer.`,
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#d33',

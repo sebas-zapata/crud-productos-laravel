@@ -12,18 +12,19 @@
             <p class="mb-1 small">Por favor, ingresa tus credenciales</p>
         </div>
 
-        @if (session('generales'))
-            <div class="alert alert-danger alert-dismissible fade show text-center m-3 mb-0 rounded-3" role="alert">
-                {{ session('generales') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+                @if (session('generales'))
+        <div class="alert alert-danger alert-dismissible fade show text-center m-3 mb-0 rounded-3" role="alert">
+            {{ session('generales') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         @endif
-
-        @if (session('info'))
-            <div class="alert alert-info alert-dismissible fade show text-center m-3 mb-0 rounded-3" role="alert">
-                {{ session('info') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+        
+        
+            @if (session('info'))
+        <div class="alert alert-info alert-dismissible fade show text-center m-3 mb-0 rounded-3" role="alert">
+            {{ session('info') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         @endif
 
         <form action="{{ url('/login') }}" method="POST" class="p-4">

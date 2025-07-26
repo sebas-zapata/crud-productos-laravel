@@ -1,5 +1,6 @@
 @extends('layouts.app')
-@section('titulo', 'Registrar Servicio')
+@section('titulo', 'Crear Servicio')
+@section('encabezado', 'Formulario de Registro de Servicio')
 @section('contenido')
 
 <div class="container my-5">
@@ -8,11 +9,6 @@
             <h4 class="mb-0">Registrar Servicio</h4>
         </div>
         <div class="card-body">
-
-            @if(session('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
-            @endif
-
             @if($errors->any())
                 <div class="alert alert-danger">
                     <ul class="mb-0">

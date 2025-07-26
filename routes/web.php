@@ -8,7 +8,7 @@ use App\Http\Controllers\ServicioController;
 
 
 Route::get('/', function () {
-    return view('login');
+    return view('auth.login');
 });
 
 // Product routes

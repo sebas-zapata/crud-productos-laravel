@@ -9,6 +9,7 @@
     <meta name="mensaje-sistema" content="{{ session('alerta') }}">
     @endif
 
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -24,7 +25,7 @@
 
 <body>
 
-<!-- Encabezado principal -->
+    <!-- Encabezado principal -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container-fluid">
         <!-- Marca / título -->
@@ -34,7 +35,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Alternar navegación">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        
         <!-- Contenido colapsable -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarContenido">
             @auth
